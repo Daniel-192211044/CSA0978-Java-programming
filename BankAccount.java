@@ -1,28 +1,21 @@
 import java.util.Scanner;
-
 class BankAccount {
     private String depositorName;
     private String accountNumber;
     private String accountType;
     private double balance;
-
     public BankAccount() {
         this.balance = 500.00;
     }
-
     public void readAccountDetails() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Enter Account Number: ");
         this.accountNumber = scanner.nextLine();
-
         System.out.print("Enter Depositor Name: ");
         this.depositorName = scanner.nextLine();
-
         System.out.print("Enter Account Type (Savings/Current): ");
         this.accountType = scanner.nextLine();
     }
-
     public void deposit(double amount) {
         if (amount > 0) {
             this.balance += amount;
@@ -31,7 +24,6 @@ class BankAccount {
             System.out.println("Invalid deposit amount.");
         }
     }
-
     public void withdraw(double amount) {
         if (amount > 0) {
             if (this.balance - amount >= 500.00) {
@@ -44,19 +36,15 @@ class BankAccount {
             System.out.println("Invalid withdrawal amount.");
         }
     }
-
     public void displayBalance() {
         System.out.println("Current balance: Rs." + this.balance);
     }
-
     public static void main(String[] args) {
         BankAccount account = new BankAccount();
         Scanner scanner = new Scanner(System.in);
         int choice;
         double amount;
-
         account.readAccountDetails();
-
         do {
             System.out.println("\n1. Deposit Amount");
             System.out.println("2. Withdraw Amount");
